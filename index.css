@@ -1,0 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CreateRoomPage from "./pages/CreateRoomPage";
+import JoinRoomPage from "./pages/JoinRoomPage";
+import ChatRoomPage from "./pages/ChatRoomPage";
+import AdminLoginPage from "./pages/AdminLoginPage";
+import AdminDashboardPage from "./pages/AdminDashboardPage";
+import NotFoundPage from "./pages/NotFoundPage";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/create" element={<CreateRoomPage />} />
+        <Route path="/join" element={<JoinRoomPage />} />
+        <Route path="/chat/:roomKey" element={<ChatRoomPage />} />
+        <Route path="/admin" element={<AdminLoginPage />} />
+        <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
